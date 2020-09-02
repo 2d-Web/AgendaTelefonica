@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listaFragment">
+    <fragment
+        android:id="@+id/listaFragment"
+        android:name="com.example.agendatelefonica.fragment.list.ListaFragment"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/action_listaFragment_to_agregarFragment"
+            app:destination="@id/agregarFragment" />
+        <action
+            android:id="@+id/action_listaFragment_to_actualizarFragmen"
+            app:destination="@id/actualizarFragmen" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarFragment"
+        android:name="com.example.agendatelefonica.fragment.add.AgregarFragment"
+        android:label="fragment_agregar"
+        tools:layout="@layout/fragment_agregar" >
+        <action
+            android:id="@+id/action_agregarFragment_to_listaFragment"
+            app:destination="@id/listaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarFragmen"
+        android:name="com.example.agendatelefonica.fragment.actualizar.ActualizarFragmen"
+        android:label="Actualizar"
+        tools:layout="@layout/fragment_actualizar" >
+        <action
+            android:id="@+id/action_actualizarFragmen_to_listaFragment"
+            app:destination="@id/listaFragment" />
+        <argument
+            android:name="actualUser"
+            app:argType="com.example.agendatelefonica.modelo.User" />
+    </fragment>
+</navigation>
